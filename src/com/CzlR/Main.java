@@ -1,11 +1,9 @@
 package src.com.CzlR;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         while (true) {
-            
+
             System.out.println("""
                     ========== 学生管理系统 ==========
                     1. 添加学生
@@ -18,28 +16,30 @@ public class Main {
                     请选择操作：
                     """);
 
-            Scanner scan = new Scanner(System.in);
-            int input = scan.nextInt();
+            String input = StudentManager.scan.next();
             switch (input) {
-                case 1:
+                case "1":
                     StudentManager.add();
-                    break;    
-                case 2:
+                    break;
+                case "2":
                     StudentManager.del();
                     break;
-                case 3:
+                case "3":
                     StudentManager.set();
                     break;
-                case 4:
+                case "4":
                     StudentManager.search();
                     break;
-                case 5:
+                case "5":
                     StudentManager.list();
                     break;
-                default:
+                case "0":
+                    System.out.println("感谢使用，再见！");
                     System.exit(0);
+                default:
+                    System.out.println("输入有误，请重新选择");
             }
-        }    
+        }
     }
 
 }
